@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.1.9)  11 JAN 2020 19:30
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.1.9)  12 JAN 2020 00:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,9 +571,9 @@ LaTeX Info: Redefining \nameref on input line 18.
 \openout4 = `PAPER.out'.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 38.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 38.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 46.
 
 (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
@@ -616,15 +616,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
 )
 \tf@toc=\write5
 \openout5 = `PAPER.toc'.
 
  [1]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 43.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 51.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 76.
 
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/omsptm.fd
@@ -643,7 +641,7 @@ File: ./img/US_Car_Increase.png Graphic file (type bmp)
 File: ./img/tesla_station.png Graphic file (type bmp)
 <./img/tesla_station.png>
 
-Overfull \hbox (32.12712pt too wide) in paragraph at lines 133--138
+Overfull \hbox (32.12712pt too wide) in paragraph at lines 139--144
 \T1/ptm/m/n/12 growth trend of Tesla charg-ing sta-tions in the next five years
 ($[]$). 
  []
@@ -668,7 +666,7 @@ File: ./img/traffic.jpg Graphic file (type bmp)
 File: ./img/urban_to.jpg Graphic file (type bmp)
 <./img/urban_to.jpg>
  [11]
-Overfull \hbox (0.63531pt too wide) in paragraph at lines 375--377
+Overfull \hbox (0.63531pt too wide) in paragraph at lines 381--383
 []\T1/ptm/m/n/12 Where $[]$ rep-re-sents the qual-ity of ac-tiv-ity at point j,
  and $[]$ rep-re-sents the travel impedance
  []
@@ -680,7 +678,7 @@ File: ./img/time.jpg Graphic file (type bmp)
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 422.
+(amsmath)                 on input line 428.
 
 File: ./img/Judge.png Graphic file (type bmp)
 <./img/Judge.png>
@@ -688,56 +686,47 @@ File: ./img/Judge.png Graphic file (type bmp)
 File: ./img/Country.jpg Graphic file (type bmp)
 <./img/Country.jpg>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 446.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 452.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 446.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 452.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 446.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 452.
 File: ./img/kini.png Graphic file (type bmp)
 <./img/kini.png>
  [15]
 File: ./img/Task4.jpg Graphic file (type bmp)
 <./img/Task4.jpg>
  [16]
-Overfull \hbox (15.96619pt too wide) in paragraph at lines 501--512
+Overfull \hbox (15.96619pt too wide) in paragraph at lines 507--518
  [] 
  []
 
-[17]
+[17] [18]
 Missing character: There is no ’ in font ptmr8t!
 Missing character: There is no ’ in font ptmr8t!
- [18]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 559.
+ [19
 
- (c:/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [19]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 567.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 567.
-
-
+] 
 AED: lastpage setting LastPage
 [20
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 578.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 578.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 582.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 582.
  (./PAPER.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 578.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 578.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 582.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 582.
 Package rerunfilecheck Info: File `PAPER.out' has not changed.
-(rerunfilecheck)             Checksum: F5C5217A0174BC938BB69964E9AD1C27.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 578.
+(rerunfilecheck)             Checksum: 8A58B719AB8A71166E90AE95C12F9E50.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 582.
  ) 
 Here is how much of TeX's memory you used:
- 12479 strings out of 492922
- 175937 string characters out of 6136752
- 273133 words of memory out of 5000000
- 16351 multiletter control sequences out of 15000+600000
- 52598 words of font info for 95 fonts, out of 8000000 for 9000
+ 12425 strings out of 492922
+ 175044 string characters out of 6136752
+ 276225 words of memory out of 5000000
+ 16301 multiletter control sequences out of 15000+600000
+ 40992 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 43i,14n,51p,975b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,14n,48p,975b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on PAPER.pdf (21 pages).

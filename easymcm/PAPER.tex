@@ -4,12 +4,12 @@
 
 % 本模板不需要填写年份，以当前电脑时间自动生成
 % 请在以下的方括号中填写队伍控制号
-\usepackage[1934867]{easymcm}  % 载入 EasyMCM 模板文件
+\usepackage[0000111]{easymcm}  % 载入 EasyMCM 模板文件
 \problem{D}  % 请在此处填写题号
 \usepackage{mathptmx}  % 这是 Times 字体，中规中矩 
 %\usepackage{mathpazo}  % 这是 COMAP 官方杂志采用的更好看的 Palatino 字体，可替代以上的 mathptmx 宏包
 \usepackage{float}
-\title{An MCM Paper Made by Team 1934867}  % 标题
+\title{An ICM Paper Made by Team 0000111}  % 标题
 
 % 如需要修改题头（默认为 MCM/ICM），请使用以下命令（此处修改为 MCM）
 %\renewcommand{\contest}{MCM}
@@ -19,18 +19,26 @@
 
 % 此处填写摘要内容
 \begin{abstract}
-    Here is the abstract of your paper.
+Our model mainly analyzes the problem of charging station network construction.
+	
+For task 1, we first distinguished the concepts of urban, suburban, and rural area according to the population density in the United State. Based on the queuing theory and the data we get by linear and quadratic fitting, we found that the average waiting time for each charging station is 5.32 hours which indicates that Tesla cannot meet the goal of all-electric vehicles in the future. Next, we established a two-objective programming model, it turned out that the required number of charging stations is 16,025 with the base ratio 3.23: 1.07: 0.34\ (urban, suburban and rural areas). 
 
-    Firstly, that is ...
+In the part of task 2, we choose South Korea as the reserch object. We established a station quantity model and a station position model to analyze the distribution of charging stations between regions. Through relationship between the vehicle power consumption and the charging capacity provided by the charging stations we estimated the total number of charging staion in South Korea. In the station position model, after comprehensively considering the traffic flow of each location on the highway and the distance between each node, we established a two-objective planning model under the conditions of the shortest distance and the maximum flow for station position.
 
-    Secondly, that is ...
+In the process of solving Task 2b, we analyzed the advantages and disadvantages of the three schemes and conducted a reasonable analysis based on economic principles. It was concluded that the best effect of scheme 3 was achieved, and the specific allocation was obtained in Task 2c. Correspondingly, in Task 2c, we nodeed the outlying areas of Korean cities and suburbs, using the improved potential model to obtain the construction value of each node. Then we obtained an ordered edge set through improved prim algorithm on finding the maximum spanning tree.  
+The routes in the edge set E is the best construction solution in the construction process of our charging station. After simplifying the problem, we got Timeline of EV penetration rate.
 
-    Finally, that is ...
+When it comes to task 3, we analyzed the models built in task 1 and task 2, and applied them to other countries with totally different traits. We found that the model in task1 did not fully meet the expectations, the model in task 2 have better results in most countries. After comprehensive analysis, we introduce the income coefficient and population coefficient to define the type of country, giving our IP model for dividing countries into balanced country and unbalanced country and give different types of solutions for different types of countries. Each type has its own charging station construction plan.
+
+And then we get down to solving task 4, we established a competitive model that comprehensively considers the development level of each new technology and the willingness of accepting the technology by people. We find that car-share, ride-share services and hyperloop have different degrees of inhibition on the realization of full-electric vehicles, while self-driving cars, rapid battery-swap station for electric cars and flying cars have different effects of promotion for the realization of all-electric vehicles. 
+
+At last, in task 5, we combined our analysis model, prepared a page of handout for leaders, analyzed the factors that their country should consider in the process of developing electric vehicles. Then our model estimated the gas vehicle-ban date for each country.
 
     % 美赛论文中无需注明关键字。若您一定要使用，
     % 请将以下两行的注释号 '%' 去除，以使其生效
-    % \vspace{5pt}
-    % \textbf{Keywords}: MATLAB, mathematics, LaTeX.
+     \vspace{5pt}
+     \textbf{Key words}: queuing theory, two-objective programming, maximum
+     spanning tree, potential model, competition model, analytic hierarchy process
 
 \end{abstract}
 
@@ -41,34 +49,26 @@
 % 正文开始
 \section{Introduction}
 \subsection{Background}
-With the increasingly high price of the petroleum and the devastitating evvironmental protection problems caused by pollutants emitted by automibiles. Energy conservation and emission reduction have became a hit worldwide, and new energy vehicles have ushered in the best opportunity for development. Whether it is a hybrid car or a pure electric vehicle, it requires external power supply for charging and public charging facilities so the number, location and distribution of shared charging facilities are particularly important. 
+With the increasingly high price of the petroleum and the devastitating environmental protection problems caused by pollutants emitted by automibiles. Energy conservation and emission reduction have became a hit worldwide, and new energy vehicles have ushered in the best opportunity for development. Whether it is a hybrid car or a pure electric vehicle, it requires external power supply for charging and public charging facilities so the number, location and distribution of shared charging facilities are particularly important. 
 
 Compared with petrol stations, electric vehicle charging stations occupy less space, have higher safety coefficent and can be better distributed in the streets and communities, allowing people to use it more conveniently and efficiently. However, the promotion of electric vehicles is not accomplished in a single step. It is necessary to expand the coverage of electric vehicles gradually, improve the network of electric vehicle charging stations continuously, and finally finish the operation of ending gasoline and diesel vehicles. In addition, different countries have different economic and cultural conditions, therefore, it's essential to determine the promotion time and promotion scope according to their specific conditions in order to achieve better results.
 \subsection{Restatement of the problem}
 It can be inferred that the problems we need to solve in this paper are:
 
-1.To study the two different types of Tesla charging stations in the United States, and
+1. To study the two different types of Tesla charging stations in the United States, and
 determine whether electric vehicles can have a full implementation in US, how
 many charging stations should be built to meet the needs, and try to find the best
 strategy to distribute them between urban, suburban, and other places.
 
-2.Under the condition of instantaneou switch to all-electric personal passenger vehicles in South Korea, determine an optimal quantity and distribution for the charging station and choose
+2. Under the condition of instantaneou switch to all-electric personal passenger vehicles in South Korea, determine an optimal quantity and distribution for the charging station and choose
 the best place to build them if the cars.
 
-3.Consider whether the model is suitable for the countries with different factors like geographies, population density distributions, and wealth distributions situations, and discuss the feasibility of creating a classification system.
+3. Consider whether the model is suitable for the countries with different factors like geographies, population density distributions, and wealth distributions situations, and discuss the feasibility of creating a classification system.
 
-4.Consider the impact from new transportation, that how new technologies affect the analysis of the increasing use of electric vehicles.
+4. Consider the impact from new transportation, that how new technologies affect the analysis of the increasing use of electric vehicles.
  
-5.Write a one-page handout for the leaders to identify the key factors they should
+5. Write a one-page handout for the leaders to identify the key factors they should
 consider when making a plan migrate personal transportation towards all-electric cars and set a gas vehicle-ban date.
-\subsection{Our work}
-We do such things ...
-
-\begin{enumerate}[\bfseries 1.]
-    \item We do ...
-    \item We do ...
-    \item We do ...
-\end{enumerate}
 
 \section{Assumptions and Notations}
 \subsection{Assumptions}
@@ -86,23 +86,29 @@ We do such things ...
 The primary notations used in our model are listed in Table \ref{tb:notation}. 
 Some of the notations will be defined later in the following sections.
 \begin{table}[!htbp]
-\begin{center}
-\caption{Notations}
-\begin{tabular}{cl}
-	\toprule
-	\multicolumn{1}{m{3cm}}{\centering Symbol}
-	&\multicolumn{1}{m{8cm}}{\centering Definition}\\
-	\midrule
-	${C_{car}}$&The number of cars\\
-	${C_{des}}$&The number of destination charging stations\\
-	${C_{sup}}$&The number of super charging stations\\
-	${f_d}$&The number of cars per person\\
-	$\rho $&Charging station service intensity\\
-	${W_s}$&Average waitint time at charging stations\\
-	${L_q}$&The length of the queue\\
-	\bottomrule
-\end{tabular}\label{tb:notation}
-\end{center}
+	\begin{center}
+		\caption{Notations}
+		\begin{tabular}{cl}
+			\toprule
+			\multicolumn{1}{m{3cm}}{\centering Symbol}
+			&\multicolumn{1}{m{8cm}}{\centering Definition}\\
+			\midrule
+			${C_{car}}$&The number of cars\\
+			${C_{des}}$&The number of destination charging stations\\
+			${C_{sup}}$&The number of super charging stations\\
+			${f_d}$&The number of cars per person\\
+			$\rho $&Charging station service intensity\\
+			${W_s}$&Average waitint time at charging stations\\
+			${L_q}$&The length of the queue\\
+			${\rho}$&Intensity of work\\
+			${Q}$&Quantity of the station\\
+			${\alpha}$&Travel friction coefficient\\
+			${m}$&Ratio of EV to all private vehicles\\
+			${\varphi}$&Population coefficient\\
+			${\psi}$&Income coefficient\\
+			\bottomrule
+		\end{tabular}\label{tb:notation}
+	\end{center}
 \end{table}
 
 
@@ -259,7 +265,7 @@ We take each town as the node and the road between the towns as the edge, formin
 
 And our model as follows:
 
-First, we can figure out the k-type of the car's power consumption on the i-section of the L-road $V(i,k)$:
+First, we can figure out the k-type of the car's power consumption on the i-section of the L-road $V(i,k)$ \cite{3}:
 \begin{equation}
 V(i,k) = g(k) \times L(i) \times q(i,k)
 \end{equation}
@@ -373,7 +379,7 @@ We can start with a clean slate, therefore, a maximum spanning tree model based 
 \end{itemize}
 
 Where\ ${M_j}$\ represents the quality of activity at point j, and\  ${D_{ij}}$\  represents the travel impedance factor (distance or time) between points i and j.
-In a system, the potential energy generated by all objects at a point is equal to the sum of the potential energy generated by each object at that point.For example, there are n discretely distributed objects in space, the exaggrat potential ${A_i}$ meets the equation blow.
+In a system, the potential energy generated by all objects at a point is equal to the sum of the potential energy generated by each object at that point.For example, there are n discretely distributed objects in space, the exaggrat potential ${A_i}$ meets the equation blow\cite{2}.
 \begin{equation}
 		A_{i}=\sum\limits_{j=1}^{n} A_{i j}=\sum\limits_{j=1}^{n} \frac{M_{j}}{D_{i j}}
 \end{equation}
@@ -381,7 +387,7 @@ In a system, the potential energy generated by all objects at a point is equal t
 	\item Modified potential model applicable to this problem
 \end{itemize}
 
-Let \ ${M_j}$\  be a constant that is positively related to population density,\ ${C_{ij}}$\  is the direct distance between i and j, and a is the distance friction constant. Then we have a new equation.
+Let \ ${M_j}$\  be a constant that is positively related to population density, average income and employment rate (We can use Urban Development Index to quantify ${M_j}$),\  ${C_{ij}}$\  is the direct distance between i and j, and a is the distance friction constant. Then we have a new equation.
 \begin{equation}
 	P_{i}=\sum_{j=1}^{n} \frac{M j}{C_{i j}^{a}}
 \end{equation}
@@ -392,9 +398,9 @@ It should be noted that the choice of the travel friction coefficient ${\alpha}$
 
 From this, an ordered node set can be obtained, and the corresponding ordered edge set ${E}$ is obtained according to the ordered nodes.It is assumed that the funds ${C}$ used for the construction of the charging station is constant every year, given that South Korea is already a developed country, and the country's economic growth has slowed down. Therefore, it's reasonable to assume that the total number of private cars remains the same and the total number of charging piles ${Q}$  remains unchanged. 
 
-According to the above number and distribution model, we can get the optimal number of charging stations between each node, and their distribution which means we have ${K_{ij}}$ represents the optimal number of charging stations between ${i}$ and ${j}$ nodes obtained from the previous model, and ${f}$ represents the funds required to build a gas station. Above all, we have the n-year electric vehicle market share ${m}$ starting from 2020 as the first year.
+According to the above number and distribution model, we can get the optimal number of charging stations between each node, and their distribution which means we have ${K_{ij}}$ represents the optimal number of charging stations between ${i}$ and ${j}$ nodes obtained from the previous model, and ${f}$ represents the funds required to build a gas station. Above all, we have the n-year electric vehicle market share ${m}$ starting from 2020 as the first year${(i,j\ in \ edge\  set\  E)}$.
 \begin{equation}
-m = \sum\limits_{i = 1}^n {\frac{C}{{(Eij \times Kij) \times p*Q}}}
+m = \sum\limits_{i = 1}^n {\frac{C}{{ K_{ij} \times p*Q}}} 
 \end{equation}
 
 Plug in the data, running our model on matlab and we finally plot the Electric-Veicle ratio development in South Korea as follow: 
@@ -515,7 +521,7 @@ f(i) = {\theta _i} \times {e_i} = {\theta _i} \times {\alpha _i} \times {\beta _
 According to our model, we can figure out that the car-share, ride-share services and hyperloop have the negative impact on the development of electric-vehicle development, and the self-driving cars, rapid battery-swap station for electric cars and flying cars have the positive impact on the development of electric-vehicle development. The result fits our perception because share-economy will definitely reduce the sales of cars including electric cars. For the advanced technology, in view of their slow state of development, as opposed to rapidly developing electric-vehicle, it will have less impact.
 
 
-
+\section{Sensitivity Analysis}
 
 \section{Strengths and Weaknesses}
 \subsection{Strengths}
@@ -530,9 +536,7 @@ According to our model, we can figure out that the car-share, ride-share service
  \end{itemize}
 
 
-% 以下为信件/备忘录部分，不需要可自行去掉
-% 如有需要可将整个 letter 环境移动到文章开头或中间
-% 请在后一个花括号内填写信件（Letter）或备忘录（Memorandum）标题
+\clearpage
 \section{Handout}
 \begin{center}
 	\textbf{Handout for the leader}
@@ -553,26 +557,26 @@ Secondly, according to the country’s transportation network, with the data of 
 Then, with the maximum spanning tree modified potential model, according to the degree of the economic development and the accessibility, you can determine the sequence of charging stations and finally get the timeline of the all-electric degree.
 
 By using the methods we provide, you can also estimate the exact time when electric vehicles is in certain proportion to traditional vehicles. According to the timetable, a gas vehicle-ban date can be decided scientifically.
+
+Since each country has its specific situation, there will be some inevitable errors and uncertainties in our model, but it can provide a general development forecast for different countries to better achieve the full coverage of electric vehicles, I hope our model can benefit your country to some extend, thank you for coming to this summit.
+
+Best wishes!
 % 参考文献，此处以 MLA 引用格式为例
+\clearpage
 \begin{thebibliography}{99}
-\bibitem{1} Einstein, A., Podolsky, B., \& Rosen, N. (1935). Can quantum-mechanical description of physical reality be considered complete?. \emph{Physical review}, 47(10), 777.
-\bibitem{2} \emph{A simple, easy \LaTeX\ template for MCM/ICM: EasyMCM}. (2018). Retrieved December 1, 2019, from\url{https://www.cnblogs.com/xjtu-blacksmith/p/easymcm.html}
+\bibitem{1} 
+Zhengna Song, Wen Chen.Evaluation method of spatial accessibility of medical facilities based on potential model.[J].\emph{Progress in geosciences},2009,28(06):848-854.
+\bibitem{2} 
+Pinghua Li, Yuqi Lu.Review and Prospect of Accessibility Research[J].\emph{Progress in geosciences},2005(03):69-78.
+\bibitem{3}
+Ma Yifei, Gao Rongxiao. Gas station layout model for road section [J]. \emph{Operations Research and Management Science}, 2005 (5): 63-68.
+\bibitem{4}
+Tian Naishuo. N-Strategy CI / M / 1 Random Service System [J]. \emph{Mathematics in Practice and Theory}, 1992 (01): 29-35.
+\bibitem{5}
+Kim K , Kahng B , Kim D . Jamming transition in traffic flow under the priority queuing protocol[J]. \emph{EPL (Europhysics Letters)}, 2009, 86(5):58002.
+\bibitem{6}
+Tian Wang.Building Charging Network for Electric Vehicles in Automobile Supply Chains[D].\emph{Huazhong University of Science and Technology},2015.
 \end{thebibliography}
 
-
-% 以下为附录内容
-% 如您的论文中不需要附录，请自行删除
-\begin{subappendices}  % 附录环境
-
-\section{Appendix A: Further on \LaTeX}
-To clarify the importance of using \LaTeX\ in MCM or ICM, several points need to be covered, which are \ldots
-
-To be more specific, \ldots
-
-All in all, \ldots
-
-Anyway, nobody \textbf{really} needs such appendix \ldots
-
-\end{subappendices}
 
 \end{document}  % 结束

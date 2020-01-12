@@ -20,8 +20,8 @@
 \contentsline {section}{\numberline {5}IP Model for Classification System }{13}{section.0.5}% 
 \contentsline {section}{\numberline {6}Competitive model for new technology}{16}{section.0.6}% 
 \contentsline {section}{\numberline {7}Sensitivity Analysis}{18}{section.0.7}% 
-\contentsline {section}{\numberline {8}Strengths and Weaknesses}{18}{section.0.8}% 
-\contentsline {subsection}{\numberline {8.1}Weaknesses}{18}{subsection.0.8.1}% 
+\contentsline {section}{\numberline {8}Strengths and Weaknesses}{19}{section.0.8}% 
+\contentsline {subsection}{\numberline {8.1}Weaknesses}{19}{subsection.0.8.1}% 
 \contentsline {section}{\numberline {9}Handout}{20}{section.0.9}% 
 \contentsline {section}{References}{21}{section.0.10}% 
 \contentsfinish 

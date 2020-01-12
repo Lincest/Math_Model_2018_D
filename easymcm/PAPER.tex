@@ -527,13 +527,21 @@ For the parameter $t_{per}$: charging time for single car is an uncertainty. We 
 
 It doesn't matter how long a car takes to charge, the number of the stations stays stable. So the parameter $t_{per}$ isn't a sensitive parameter.
 
-
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{average.jpg}
 	\caption{Sensitivity of the $t_{per}$}\label{fig:16}
 \end{figure}
+
+For task 2, we also conducted a sensitivity analysis of our Station quantity model. We assume that the traffic flow is the sensitive parameter for the quantity of the charging station. By changing the daily vehicle flow of the Road A and with our two-objective programming model we finally get the number of stations' changing situation as follow:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{vehicle.jpg}
+	\caption{Sensitivity of the traffic flow}\label{fig:17}
+\end{figure}
+
+It's easy to see that with the changing of the daily vehicle flow, the number of changing stations required has a rapid change. So we give the conclusion that the traffic flow is a sensitive parameter.
 
 
 

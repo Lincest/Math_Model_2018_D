@@ -21,16 +21,15 @@
 \begin{abstract}
 Our model mainly analyzes the problem of charging station network construction.
 	
-For task 1, we first distinguished the concepts of urban, suburban, and rural area according to the population density in the US. Based on the queuing theory and the data we get by linear and quadratic fitting, we found that the average waiting time for each charging station is 5.32 hours which indicates that Tesla cannot meet the goal of all-electric vehicles in the future. Next, we established a two-objective programming model, it turned out that the required number of charging stations is 16,025 with the base ratio 3.23: 1.07: 0.34\ (urban, suburban and rural areas). 
+For task 1, we first distinguished the concepts of urban, suburban, and rural area according to the population density in the United State. Based on the queuing theory and the data we get by linear and quadratic fitting, we found that the average waiting time for each charging station is 5.32 hours which indicates that Tesla cannot meet the goal of all-electric vehicles in the future. Next, we established a two-objective programming model, it turned out that the required number of charging stations is 16,025 with the base ratio 3.23: 1.07: 0.34\ (urban, suburban and rural areas). 
 
-In the part of task 2, we choose South Korea as the reserch object. We established a station quantity model and a station position model to analyze the distribution of charging stations between regions. Through relationship between the vehicle power consumption and the charging capacity provided by the charging stations we estimated the total number of charging staion in South Korea. In the station position model, after comprehensively considering the traffic flow of each location on the highway and the distance between each node, we established a two-objective programming model under the conditions of the shortest distance and the maximum flow for station position.
+In the part of task 2a, we choose South Korea as the reserch object. We established a station quantity model and a station position model to analyze the distribution of charging stations between regions. Through relationship between the vehicle power consumption and the charging capacity provided by the charging stations we estimated the total number of charging station in South Korea. In the station position model, after comprehensively considering the traffic flow of each location on the highway and the distance between each node, we established a two-objective planning model under the conditions of the shortest distance and the maximum flow for station position.
 
-In the process of solving Task 2b, we analyzed the advantages and disadvantages of the three schemes and conducted a reasonable analysis based on economic principles. It was concluded that the best effect of scheme 3 was achieved, and the specific allocation was obtained in Task 2c. Correspondingly, in Task 2c, we nodeed the outlying areas of Korean cities and suburbs, using the improved potential model to obtain the construction value of each node. Then we obtained an ordered edge set through improved prim algorithm on finding the maximum spanning tree.  
-The routes in the edge set E is the best construction solution in the construction process of our charging station. After simplifying the problem, we got Timeline of EV penetration rate.
+In the process of solving task 2b, we analyzed the advantages and disadvantages of the three schemes and conducted a reasonable analysis based on economic principles. Correspondingly, in Task 2c, we noded the outlying areas of Korean cities and suburbs, using the improved potential model to obtain the construction value of each node. Then we obtained an ordered edge set through improved prim algorithm on finding the maximum spanning tree. After simplifying the problem, we got Timeline of EV penetration rate.
 
-When it comes to task 3, we analyzed the models built in task 1 and task 2, and applied them to other countries with totally different traits. We found that the model in task1 did not fully meet the expectations, the model in task 2 have better results in most countries. After comprehensive analysis, we introduce the income coefficient and population coefficient to define the type of country, giving our IP model for dividing countries into balanced country and unbalanced country and give different types of solutions for different types of countries. Each type has its own charging station construction plan.
+When it comes to task 3, we analyzed the models built in task 1 and task 2, and applied them to other countries with totally different traits. After comprehensive analysis, we introduce the income coefficient and population coefficient to define the type of country, giving our IP model for dividing countries into balanced country and unbalanced country and give different types of solutions for different types of countries.
 
-And then we get down to solving task 4, we established a competitive model that comprehensively considers the development level of each new technology and the willingness of accepting the technology by people. We find that car-share, ride-share services and hyperloop have different degrees of inhibition on the realization of full-electric vehicles, while self-driving cars, rapid battery-swap station for electric cars and flying cars have different effects of promotion for the realization of all-electric vehicles. 
+And then we get down to solving task 4, we established a competitive model that comprehensively considers the development level of each new technology and the willingness of accepting the technology by people. We find that some technologies have effects of promotion for the realization of all-electric vehicles while others don't. 
 
 At last, in task 5, we combined our analysis model, prepared a page of handout for leaders, analyzed the factors that their country should consider in the process of developing electric vehicles. Then our model estimated the gas vehicle-ban date for each country.
 
@@ -49,9 +48,9 @@ At last, in task 5, we combined our analysis model, prepared a page of handout f
 % 正文开始
 \section{Introduction}
 \subsection{Background}
-With the increasingly high price of the petroleum and the devastitating environmental protection problems caused by pollutants emitted by automibiles. Energy conservation and emission reduction have became a hit worldwide, and new energy vehicles have ushered in the best opportunity for development. Whether it is a hybrid car or a pure electric vehicle, it requires external power supply for charging and public charging facilities so the number, location and distribution of shared charging facilities are particularly important. 
+With the increasingly high price of the petroleum and the devastating environmental protection problems caused by pollutants emitted by automibiles. Energy conservation and emission reduction have become a hit worldwide, and new energy vehicles have ushered in the best opportunity for development. Whether it is a hybrid car or a pure electric vehicle, it requires external power supply for charging and public charging facilities so the number, location and distribution of shared charging facilities are particularly important. 
 
-Compared with petrol stations, electric vehicle charging stations occupy less space, have higher safety coefficent and can be better distributed in the streets and communities, allowing people to use it more conveniently and efficiently. However, the promotion of electric vehicles is not accomplished in a single step. It is necessary to expand the coverage of electric vehicles gradually, improve the network of electric vehicle charging stations continuously, and finally finish the operation of ending gasoline and diesel vehicles. In addition, different countries have different economic and cultural conditions, therefore, it's essential to determine the promotion time and promotion scope according to their specific conditions in order to achieve better results.
+Compared with petrol stations, electric vehicle charging stations occupy less space, have higher safety coefficient and can be better distributed in the streets and communities, allowing people to use it more conveniently and efficiently. However, the promotion of electric vehicles is not accomplished in a single step. It is necessary to expand the coverage of electric vehicles gradually, improve the network of electric vehicle charging stations continuously, and finally finish the operation of ending gasoline and diesel vehicles. In addition, different countries have different economic and cultural conditions, therefore, it's essential to determine the promotion time and promotion scope according to their specific conditions in order to achieve better results.
 \subsection{Restatement of the problem}
 It can be inferred that the problems we need to solve in this paper are:
 
@@ -117,7 +116,7 @@ Some of the notations will be defined later in the following sections.
 \begin{itemize}
 	\item \textbf{US population density}
 		
-Based on the data we've collected, we got a map of population density in the United States. Because there is no clear standard to distinguish the urban, suburban and rural areas. We distinguish the areas of the United States by population density. By Figure \ref{fig:1}, we define urban as areas with a population density above 250,000, and define the suburban as areas with a population density between 50,000 and 250,000. Otherwise, the area is the rural area.
+Based on the data we've collected, we got a map of population density in the United States. Because there is no clear standard to distinguish the urban, suburban and rural areas. We distinguish the areas of the United States by population density. By Figure \ref{fig:1}, we define urban as areas with a population density above 250,000, and define the suburban as areas with a population density between 50,000 and 250,000. Otherwise, the area is defined as the rural area.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.9\textwidth]{US_Population.jpg}
@@ -207,10 +206,10 @@ s.t\left\{ {\begin{array}{*{20}{c}}
 \subsubsection{Model solution and analysis}
 By solving the model above, we get clear results below:
 
-1.According to the current growth trend of electric vehicles and charging stations, Tesla is not able to provide basic charging services under the condition of complete switch to electric vehicles in the United States.
+1. According to the current growth trend of electric vehicles and charging stations, Tesla is not able to provide basic charging services under the condition of complete switch to electric vehicles in the United States.
 According to our model, when the proportion of electric vehicles ${k}$ reaches 1, the avarage waiting time ${W_s}$ is calculated to be 5.32 hours according to the queuing theory model greatly exceeds the acceptable waiting time range of charging, so it's reasonable to think that Tesla can not meet the basic living needs of the people in future time.
 
-2.According our definition of urben, suburben and remote areas based on population density, we have the relevant parameters such as work intensity and average waiting time obtained by queuing theory model.
+2. According our definition of urban, suburban and remote areas based on population density, we have the relevant parameters such as work intensity and average waiting time obtained by queuing theory model.
 Considering the load of power, we reasonably limit the sum of work intensity of charging stations in urban, suburban and rural areas to  equal to 1,\ ${(\rho _{ur} + {\rho _{su}} + {\rho _{ru}} = 1)}$. In addition, according to the total charging time less than the total waiting time
 ${(\sum {{C_{per}}}  \times {t_{per}} \le \sum {{W_s}}) }$
 , all parameters are positive\ ${({\rho _{ur}},{\rho _{su}},{\rho _{ru}} > 0)}$\ , we get the corresponding constraints.
@@ -232,7 +231,7 @@ by combining the expression with the constraints, we have the optimal ratio of t
 \subsection{Charging station distribution model}
 \subsubsection{Using our previous model in South Korea}
 
-From what we have discussed on task 1, firstly we use our model to analyze the exact quantities of charging stations in South Korea. Korea is one of the typical country in the world which have the ability to complete the plan of replacing motor vehicles with electric cars. By running our model in Matlab, we finally get the answer:
+From what we have discussed on task 1, firstly we use our model to analyze the exact quantities of charging stations in South Korea. Korea is one of the typical country in the world which have the ability to complete the plan of replacing motor vehicles with electric cars. By running our model on Matlab, we finally get the answer:
 \begin{table}[H]
 \caption{Quantities of charging stations in South Korea}
 \begin{center}
@@ -522,18 +521,35 @@ According to our model, we can figure out that the car-share, ride-share service
 
 
 \section{Sensitivity Analysis}
+We have conducted a sensitivity analysis of the All-electric analysis model.
+
+For the parameter $t_{per}$: charging time for single car is an uncertainty. We analyzed its sensitivity, giving the $t_{per}$ for range [0.5,8] and calculating the number of charging stations required, finally get our conclusion:
+
+It doesn't matter how long a car takes to charge, the number of the stations stays stable. So the parameter $t_{per}$ isn't a sensitive parameter.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{average.jpg}
+	\caption{Sensitivity of the $t_{per}$}\label{fig:16}
+\end{figure}
+
+
 
 \section{Strengths and Weaknesses}
-\subsection{Strengths}
 \begin{itemize}
-    \item First one...
-    \item Second one ...
+	\item Covering many fields like  engineering, management, statistics and economy enables the paper to study the question from the big picture which makes our model comprehensive and precise.
+	\item For the quantity model in task 1, we classified urban, suburban and rural areas based on the population density in U.S. which makes the question clear and simple
+	For the quantity model in task2a, we creatively applied the relationship between the vehicle power consumption and the charging capacity provided by the charging stations and therefore greatly simplified the problem with little loss in reliability.
+	\item For our site-selection model and construction plan we innovatively introduced potential model in accessibility research in the calculation of edge weight and improve it by redefining the coefficient ${M_j}$ to the development index covering economy, population, transportation and future development which makes the model more universal and robust.
 \end{itemize}
 
 \subsection{Weaknesses}
 \begin{itemize}
-    \item Only one ...
- \end{itemize}
+	\item Due to time and data constraints, the model fails to considerate the differences within different distribution of the super-charing piles and destination charging piles.
+	\item The sources of data are not wide enough so that models are difficult to solve effectively. However, the optimality of the models are always established, in other words, the model always solves the correct optimal result based on the given data. 
+\end{itemize}
 
 
 \clearpage
